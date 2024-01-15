@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            flex-direction: column;
+        }
+        #getbtn{
+            /* padding: 30px; */
+            /* padding-left: 40px;
+            padding-right: 40px;
+            padding-top: 20px;
+            padding-bottom: 20px; */
+        }
+    </style>
+</head>
+<body>
+   
+    <input  id="inp"  type="text">
+    <br>
+    <button id="getbtn">+</button>
+    
+    
+
+    <script>
+        
+
+        const getElement=document.querySelector("#getbtn")
+        getElement.addEventListener("click",fn2);
+
+        //set the geth1 to expense
+        
+        let totalexpense=0;
+
+        
+        function fn2(){
+            //get element
+            const getElement2=document.querySelector("#inp");
+            //get value from that textinput
+            let getAmount=getElement2.value;
+            console.log({getAmount});
+            //convert that text to integer 
+            const expense=parseInt(getAmount);
+            //increment value everytime
+            totalexpense=totalexpense+expense;
+            //show output
+            console.log(totalexpense)
+
+
+        }
+        
+
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            flex-direction: column;
+        }
+        #getbtn {
+            /* Add your styling if needed */
+        }
+    </style>
+</head>
+<body>
+    <h1 id="number"></h1>
+    <input id="inp" type="text">
+    <br>
+    <button id="getbtn">+</button>
+    <br>
+    <button id="clear">clear</button>
+
+    <script>
+        // get the h1  heading element
+        const geth1 = document.querySelector("#number");
+        //set the geth1 to expense
+        let totalexpense = 0;
+        //set the heading element to totalexpense
+        geth1.textContent = totalexpense;
+         // Update the event listener to listen for the button click
+        const getbtn = document.querySelector("#getbtn");
+        getbtn.addEventListener("click", fn2);
+
+        
+        function fn2() {
+            const getElement2 = document.querySelector("#inp");
+             //get value from that textinput
+            let getAmount = getElement2.value;
+          
+            console.log({ getAmount });
+
+             //convert that text to integer 
+            const expense = parseInt(getAmount, 10);
+            //increment value everytime
+            totalexpense = totalexpense + expense;
+              //show output
+            geth1.textContent = totalexpense;
+        }
+
+        const geth2 = document.querySelector("#clear");
+        geth2.addEventListener("click", fn3);
+
+        function fn3() {
+            totalexpense = 0;
+            geth1.textContent = totalexpense;
+        }
+        
+
+
+
+    </script>
+</body>
+</html>
