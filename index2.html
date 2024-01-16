@@ -1,3 +1,5 @@
+<!-- chapter 3 (reading from input) -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,17 +37,21 @@
         const getElement=document.querySelector("#getbtn")
         getElement.addEventListener("click",fn2);
 
+            //get element
+            const getElement2=document.querySelector("#inp");
+        
+        
+
         //set the geth1 to expense
         
         let totalexpense=0;
 
         
         function fn2(){
-            //get element
-            const getElement2=document.querySelector("#inp");
+        
             //get value from that textinput
             let getAmount=getElement2.value;
-            console.log({getAmount});
+           
             //convert that text to integer 
             const expense=parseInt(getAmount);
             //increment value everytime

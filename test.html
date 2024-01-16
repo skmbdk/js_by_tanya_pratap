@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            flex-direction: column;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="useinput">
+    <br>
+    <button id="result">
+        click
+    </button>
+    
+    <script>
+        //get this result element
+        const res=document.querySelector("#result")
+        console.log(res)
+
+        //click eventlistner
+        res.addEventListener("click",fp)
+
+
+        //get inputfield
+        const inputfild=document.querySelector("#useinput")
+
+        //convert to integer
+        
+        
+
+        function fp()
+        {
+            var parseint = parseInt(inputfild, 10);
+            console.log({parseint})
+
+        }
+
+
+
+
+
+
+
+        let skm=0
+        function fn(){
+            skm=skm+1;
+            console.log(skm)
+
+        }
+
+
+
+    </script>
+</body>
+</html>

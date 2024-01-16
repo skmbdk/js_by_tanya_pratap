@@ -1,4 +1,4 @@
-<!-- chapter 4 (writing to dom ) -->
+<!-- chapter 5 (arrays & objects) -->
 
 
 
@@ -25,7 +25,10 @@
     <h1>Rammy</h1>
     
     <h1 id="number"></h1>
-    <input id="inp" type="text">
+    <input id="money" type="text">
+
+    <br>
+    <input type="type" id="type">
     <br>
     <button id="getbtn">+</button>
     <br>
@@ -43,6 +46,12 @@
         const getbtn = document.querySelector("#getbtn");
         getbtn.addEventListener("click", fn2);
 
+
+        const getType=document.querySelector("#type")
+
+        //empty array
+        const allExpenses=[];
+
         //clear add event listner   
         const geth2 = document.querySelector("#clear");
         geth2.addEventListener("click",clear);
@@ -50,11 +59,35 @@
 
         
         function fn2() {
-            const getElement2 = document.querySelector("#inp");
+            const getElement2 = document.querySelector("#money");
              //get value from that textinput
             let getAmount = getElement2.value;
           
-            console.log({ getAmount });
+            // console.log({ getAmount });
+
+ //#type get value from input
+             let gettypeValue=getType.value;
+            console.log({ getAmount,gettypeValue });
+
+            //creating empty object 
+            const expenseItem={};
+
+            //put list object in that object amount and type are two keys objects 
+            //and we are  taking input what we are passing as amount and type
+            expenseItem.amount=getAmount;
+            expenseItem.type=gettypeValue;
+
+            // console.log(expenseItem);
+
+
+            //pushing object into that empty array 
+            allExpenses.push(expenseItem);
+            //clear console if you print before
+            console.clear();
+            //printing array as the table
+            console.table(allExpenses)
+
+           
 
              //convert that text to integer 
             const expense = parseInt(getAmount, 10);

@@ -1,0 +1,150 @@
+
+<!-- chapter -6(processing data on user action) -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            flex-direction: column;
+        }
+        #getbtn {
+            /* Add your styling if needed */
+        }
+    </style>
+</head>
+<body>
+    <h1>Rammy</h1>
+    
+    <h1 id="number"></h1>
+    <input id="money" type="text">
+
+    <br>
+    <input type="type" id="type">
+    <br>
+    <button id="getbtn">+</button>
+    <br>
+    <button id="clear">clear</button>
+    <div id="expenseTable"></div>
+    
+
+    <script>
+        // get the h1  heading element
+        const geth1 = document.querySelector("#number");
+        //set the geth1 to expense
+        let totalexpense = 0;
+        //set the heading element to totalexpense
+        
+        
+
+         // Update the event listener to listen for the button click
+        const getbtn = document.querySelector("#getbtn");
+        getbtn.addEventListener("click", fn2);
+
+
+        const getType=document.querySelector("#type")
+
+        //empty array
+        const allExpenses=[];
+
+        //clear add event listner   
+        const geth2 = document.querySelector("#clear");
+        geth2.addEventListener("click",clear);
+
+
+
+        //get the referance of the expenseTable
+        const expenseTableEl=document.querySelector("#expenseTable");
+
+        
+
+       const someText=`T
+       Total :${totalexpense}`
+            geth1.textContent=someText;
+        function fn2() {
+            const getElement2 = document.querySelector("#money");
+             //get value from that textinput
+            let getAmount = getElement2.value;
+          
+            // console.log({ getAmount });
+
+            //#type get value from input
+             let gettypeValue=getType.value;
+            console.log({ getAmount,gettypeValue });
+
+            //creating empty object 
+            const expenseItem={};
+
+            //put list object in that object amount and type are two keys objects 
+            //and we are  taking input what we are passing as amount and type
+            expenseItem.amount=getAmount;
+            expenseItem.type=gettypeValue;
+
+            // console.log(expenseItem);
+
+
+            //pushing object into that empty array 
+            allExpenses.push(expenseItem);
+            //clear console if you print before
+            console.clear();
+            //printing array as the table
+            console.table(allExpenses)
+
+          
+
+           
+
+             //convert that text to integer 
+            const expense = parseInt(getAmount, 10);
+            //increment value everytime
+            totalexpense = totalexpense + expense;
+              //show output
+            // geth1.textContent = totalexpense;
+            const someText=`total :${totalexpense}`
+            geth1.textContent=someText;
+
+          //first value come here
+            const data1=allExpenses[0];
+            const data2 = allExpenses[1];
+            console.log(data1)
+            // const data2=allExpenses[1];
+            const data1Text=`expense:${data1.amount}::desc:${data1.type}`
+            const data2Text=`expense:${data2.amount}::desc:${data2.type}`
+
+
+
+            const tableText=`
+            <div>${data1Text}</div>
+            <div>${data2Text}</div>
+        
+            `
+            expenseTableEl.innerHTML=tableText
+
+
+            
+
+            // expenseTableEl.textContent=data1Text + data2Text;
+            // console.log(expenseTableEl.textContent = );
+        }
+
+      
+
+        function clear() {
+            totalexpense = 0;
+            geth1.textContent = totalexpense;
+        }
+        
+
+
+
+    </script>
+</body>
+</html>
